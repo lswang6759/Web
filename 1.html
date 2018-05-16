@@ -1,0 +1,28 @@
+<html>
+<head>
+
+</head>
+<body>
+	<input type="button" value="1">
+	<input type="button" value="1">
+<script>
+    function my$(TagName) {
+        return document.getElementsByTagName(TagName);
+    }
+
+    function getVal() {
+        var val = 2;
+        // console.log("haha")
+        return function () {
+            this.value = ""+ (val++)+"";
+        }
+    }
+
+    var objBtn = my$("input");
+    for (var i = 0; i < objBtn.length; i++){
+        objBtn[i].onclick = getVal();
+    }
+
+</script>
+</body>
+</html>
